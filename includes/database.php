@@ -6,7 +6,7 @@ const LOCALHOST = 'localhost';
 
 $connection = mysqli_connect(LOCALHOST,USER,PASS,DATABASENAME);
 if (!$connection) {
-    echo 'error connecting to the DB';
+    echo 'error connecting to the DB' . mysqli_error($connection);
 }
-
+//jqery -> AJAX ->controlador
 ?>
