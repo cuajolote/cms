@@ -13,12 +13,42 @@
             <div class="col-md-8">
 
                 <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
+                     Page Heading
+                     <small>Secondary Text</small>
                 </h1>
 
+                <?php 
+                
+                $query = 'SELECT * FROM posts';
+                $queryAllPosts = mysqli_query($connection,$query);
+
+                while ($row = mysqli_fetch_assoc($queryAllPosts)) {
+                        $postTitle = $row['post_title'];
+                        $postAuthor = $row['post_author'];
+                        $postContent = $row['post_content'];
+                        $postDate = $row['post_date'];
+                        $postImage = $row['post_image'];
+                        
+                        echo "<h2>
+                        <a href='#'>$postTitle</a>
+                    </h2>
+                    <p class='lead'>
+                    by <a href='index.php'>$postAuthor</a>
+                </p>
+                <p><span class='glyphicon glyphicon-time'></span> Posted on $postDate</p>
+                <hr>
+                <img class='img-responsive' src='http://placehold.it/900x300' alt='''>
+                <hr>
+                <p>$postContent</p>
+                <a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-right'></span></a>
+
+                <hr>";
+                }
+                
+                ?>
+
                 <!-- First Blog Post -->
-                <h2>
+                <!-- <h2>
                     <a href="#">Blog Post Title</a>
                 </h2>
                 <p class="lead">
@@ -31,7 +61,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                <hr>
+                <hr> -->
 
                 <!-- Pager -->
                 <ul class="pager">
