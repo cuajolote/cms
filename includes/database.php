@@ -6,9 +6,7 @@ const LOCALHOST = 'localhost';
 
 $connection = mysqli_connect(LOCALHOST,USER,PASS,DATABASENAME);
 if (!$connection) {
-    echo 'error';
-}else{
-    echo 'connected';   
+    echo 'error connecting to the DB';
 }
 
 ?>
