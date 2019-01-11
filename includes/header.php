@@ -19,7 +19,6 @@
 
     <!-- Custom CSS -->
     <link href="css/blog-home.css" rel="stylesheet">
-    <script src="js/main.js"></script>
     <style>
         .fas{
             display:none;

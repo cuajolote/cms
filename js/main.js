@@ -1,11 +1,10 @@
+
 $(document).ready(function() {
 
 	$('form').submit(function(e) {
 		e.preventDefault();
-		
 		var data = $(this).serializeArray();
 		data.push({name: 'tag', value: 'login'});
-		console.log(data);
 
 		$.ajax({
 			url: 'process.php',
@@ -16,10 +15,10 @@ $(document).ready(function() {
 				$('.fas').css('display','inline-block');
 			}
 		})
-		.done(function() {  //true
+		.done(function() {  
 			$('span').html("Bienvenido");
 		})
-		.fail(function() {  //false
+		.fail(function() {  
 			$('span').html("Usuario o contraseña incorrecto");
 		})
 		.always(function() {
